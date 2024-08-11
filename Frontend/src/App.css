@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.mainText {
+  font-family: "Playwrite US Trad", cursive;
+  font-optical-sizing: auto;
+}
+
+.FeedBackBlock {
+  background-color: rgba(158, 65, 65, 0.136);
+  border-radius: 10px;
+  flex-direction: column;
+  height: 330px;
+  width: 500px;
+  box-shadow: 10px 5px 5px red;
+  box-shadow: 60px -16px rgba(40, 74, 74, 0.345);
+}
+
+.Name {
+  border-radius: 5px;
+  position: relative;
+  right: 30px;
+  top: 30px;
+  height: 30px;
+  width: 200px;
+}
+
+.Email {
+  border-radius: 5px;
+  position: relative;
+  right: -30px;
+  top: 30px;
+  height: 30px;
+  width: 200px;
+}
+
+.Message {
+  border-radius: 5px;
+  position: relative;
+  height: 150px;
+  width: 470px;
+  display: block;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.605);
+}
+
+.SocialMedia {
+  border-radius: 10px;
+  height: 60px;
+  background-color: rgba(240, 255, 255, 0.088);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 70px;
+  justify-content: space-between;
+  opacity: 90%;
+  backdrop-filter: blur(10px);
+}
+
+.Link {
+  font-family: "Playwrite US Trad", cursive;
+  font-optical-sizing: auto;
+  position: relative;
+  top: 80px;
+}
