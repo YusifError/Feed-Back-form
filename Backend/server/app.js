@@ -1,36 +1,31 @@
-const express = require('express');
+require("dotenv").config()
+
+const express = require('express')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const Feedback = require('../models/feedback')
 
+const uri = process.env.URI
 const port = 3000;
-//const uri = "mongodb+srv://yusifgurbanov:fkKghqg5Xjk7XaNR@profilefaces.lgnco8f.mongodb.net/?appName=ProfileFaces";
-const uri = "mongodb+srv://yusifgurbanov:fkKghqg5Xjk7XaNRprofilefaces.mongodb.net/?appName=ProfileFaces?authSource=admin&compressors=zlib&retryWrites=true&w=majority&ssl=true"
+const app = express();
 
 const client = new MongoClient(uri, {
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-    }
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
 });
 
 async function run() {
-    try {
-        await client.connect(
-            process.env.MONGO_URL,
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useCreateIndex: true,
-            });
-        await client.db("admin").command({ ping: 1 });
-        console.log("База данных успешно подключена!");
-    } finally {
-        await client.close();
-    }
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    console.log("База данных успешно подключена!");
+  } finally {
+    await client.close();
+  }
 }
 
 app.use(bodyParser.json());
