@@ -1,5 +1,6 @@
 require("dotenv").config()
 
+const Results = require('./api.js')
 const express = require('express')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -31,7 +32,7 @@ async function run() {
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send(Results)
 });
 
 app.post('/feedback', (req, res) => {
