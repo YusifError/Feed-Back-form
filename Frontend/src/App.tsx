@@ -23,7 +23,7 @@ function App() {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'Content-Type': 'application/json' }, 
-      mode: 'cors'
+      mode: 'no-cors'
     });
     console.log(data);
     alert('Thanks!');

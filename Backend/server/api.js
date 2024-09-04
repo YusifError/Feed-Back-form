@@ -11,12 +11,13 @@ app.get('/', (req, res) => {
 
 app.post('/users', (req, res) => {
   // Обработка полученных данных
-  const receivedData = req.body;
-  console.log(receivedData); // Выведем полученные данные в консоль
+  const userData = req.body;
+  console.log('Received data:', userData)
+  res.status(200).json({message: 'Данные успешно перенаправлены'});
   res.send('Данные успешно получены!');
 });
 
-app.enableCors({
+app.enable({
   origin: [
     'http://127.0.0.1:5173',
     'http://127.0.0.1:5000',
