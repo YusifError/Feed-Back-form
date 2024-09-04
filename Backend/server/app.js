@@ -7,11 +7,11 @@ const bodyParser = require('body-parser');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const Feedback = require('../models/feedback')
 
-const uri = process.env.URI
+const uri = "mongodb+srv://yusifgurbanov:2CV6BHOKlzMtsASr@profilefaces.lgnco8f.mongodb.net/?retryWrites=true&w=majority&appName=ProfileFaces";
 const port = 3000;
 const app = express();
 
-const client = new MongoClient(uri, {
+export const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -51,3 +51,5 @@ app.listen(port, () => {
 });
 
 run().catch(console.dir);
+
+export default client;
