@@ -17,14 +17,7 @@ function App() {
 
   const { register, handleSubmit, reset } = useForm<Myform>()
 
-
-  const Submit = async (data) => {
-    await fetch('http://localhost:3000/users',  {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }, 
-      mode: 'cors'
-    });
+  const Submit = async (data:any) => {
     console.log(data);
     alert('Thanks!');
     reset();
