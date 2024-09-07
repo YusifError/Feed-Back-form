@@ -6,4 +6,3 @@
 <h3>4)cd .. <h3>
 <h3>5)cd Frontend<h3>
 <h3>6)npm i<h3> 
-
