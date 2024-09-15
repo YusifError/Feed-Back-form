@@ -4,6 +4,11 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json()); // чтобы сервер мог обрабатывать JSON данные
+app.use(cors,({
+  origin: 'http://localhost:5173/',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}))
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
@@ -16,6 +21,13 @@ app.post('/users', (req, res) => {
   res.status(200).json({message: 'Данные успешно перенаправлены'});
   res.send('Данные успешно получены!');
 });
+
+app.get('/users/data', (req, res) => {
+  const body = req.body
+  fetch('http://localhost:3000/users')
+    .then(response => console.log(response))
+  res.send(express.response)
+})
 
 app.enable({
   origin: [

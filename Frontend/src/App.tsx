@@ -19,10 +19,10 @@ function App() {
 
 
   const Submit = async (data) => {
-    await fetch('http://localhost:3000/users',  {
+    await fetch('http://localhost:3000/users', {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }, 
+      headers: { 'Content-type': 'application/json;charset=utf-8' },
       mode: 'no-cors'
     });
     console.log(data);
@@ -51,3 +51,6 @@ function App() {
 }
 
 export default App
+
+
+
