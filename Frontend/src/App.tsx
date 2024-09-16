@@ -22,7 +22,7 @@ function App() {
     await fetch('http://localhost:3000/users', {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: { 'Content-type': 'application/json;charset=utf-8' },
+      headers: { 'Content-type': 'application/x-www-form-urlencoded' },
       mode: 'no-cors'
     });
     console.log(data);
